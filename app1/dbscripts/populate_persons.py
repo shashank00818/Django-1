@@ -2,6 +2,8 @@ from faker import Faker
 from app1.models import Person
 import random
 
+# exec(open('./my_app2/dbscripts/populate_persons.py').read())
+# code to run this file in shell
 
 class PopulatePersons:
 
@@ -20,7 +22,7 @@ class PopulatePersons:
                 email=fake.email(),
             )
             print(person_obj)
-        
+
         
 obj = PopulatePersons()
 obj.run()
