@@ -6,4 +6,9 @@ def hello_world(request):
     return HttpResponse(html)
 
 def hii_world(request):
-    return render(request, "hii_world.html")
+    my_data = {
+        "name" : "Shashank",
+        "language" : "Python",
+        "dream" : "Django developer"
+    }
+    return render(request, "hii_world.html", my_data)
