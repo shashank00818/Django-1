@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from app1.models import Person
   
 def hello_world(request):
     html = "<html><body>You are hitting Hello world view</body></html>"
@@ -12,3 +13,11 @@ def hii_world(request):
         "dream" : "Django developer"
     }
     return render(request, "hii_world.html", my_data)
+
+def person_info(request, person_id):
+    person_object = Person.objects.get(id=person_id)
+    my_data = {
+        "name" : person_object.fname,
+        "email" : person_object.email
+    }
+    return render(request, "person_info.html", my_data)
