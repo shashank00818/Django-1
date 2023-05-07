@@ -10,7 +10,9 @@ def hii_world(request):
     my_data = {
         "name" : "Shashank",
         "language" : "Python",
-        "dream" : "Django developer"
+        "dream" : "Django developer",
+        "person_list" : Person.objects.filter(id__lte=10),
+        "oldest_person_list" :  Person.objects.all().order_by('-age')[:10]
     }
     return render(request, "hii_world.html", my_data)
 

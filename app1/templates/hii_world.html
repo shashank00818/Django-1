@@ -12,5 +12,12 @@
     <h3>My name is {{name}}</h3>
     <h3>My coding language is {{language}}</h3>
     <h3>My dream is becoming a {{dream}}</h3>
+    {% for person in person_list %}
+        <li>{{ person.fname }}</li>
+    {% endfor %}
+    <h3>List 2</h3>
+    {% for person in oldest_person_list %}
+        <li>{{ person.fname }} - {{ person.age }} </li>
+    {% endfor %}
 </body>
 </html>
