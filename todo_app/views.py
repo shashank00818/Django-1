@@ -1,5 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from todo_app.models import Todo
 
 def index_view(request):
-    return render(request, "todo_index.html")
+    data = {
+        "todo_list" : Todo.objects.all().order_by('id')
+    }
+    return render(request, "todo_index.html", data)
 # Create your views here.
+
+def add_todo_view(request):
+    todo_title = request.POST['todo_title']
+    Todo.objects.create(title=todo_title)
+    return redirect('todo_index')
