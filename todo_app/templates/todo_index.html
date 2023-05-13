@@ -22,6 +22,11 @@
         <div class="card-body">
           <h5 class="card-title">{{todo.title}}</h5>
           <p class="card-text">Created on {{todo.created_at}}</p>
+    {% comment %} <form method="DELETE" action="/todo-app/delete-todo/<id>" > {% endcomment %}
+      <form method="GET"  action="{% url 'delete_todo' todo.id %}">
+        <button class="btn btn-outline-dark" type="submit">Delete</button>
+      </form>
+      </div>
         </div>
       </div>
     {% endfor %}
