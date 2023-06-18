@@ -1,10 +1,1 @@
-# Django-1
-"# Django-1" 
-"# Django-1" 
-"# Django-1" 
-"# Django-1" 
-"# Django-1" 
-"# Django-1" 
-"# Django-1" 
-"# Django-1" 
-"# Django-1" 
+# This is only for practicing Django concepts
